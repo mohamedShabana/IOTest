@@ -20,8 +20,13 @@ namespace SoccerStats
             //}
             var fileName = Path.Combine(directory.FullName, "data.txt");
             var file = new FileInfo(fileName);
-            
-
+            if(file.Exists)
+            {
+                var reader = new StreamReader(file.FullName);
+                Console.SetIn(reader);
+                Console.WriteLine(Console.ReadLine());
+                reader.Close();
+            }
         }
     }
 }
