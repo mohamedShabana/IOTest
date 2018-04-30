@@ -11,6 +11,8 @@ namespace SoccerStats
     {
         static void Main(string[] args)
         {
+            string currentDirectory = Directory.GetCurrentDirectory();
+           
         }
     }
 }
