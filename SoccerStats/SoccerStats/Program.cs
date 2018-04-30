@@ -21,7 +21,14 @@ namespace SoccerStats
             //var fileName = Path.Combine(directory.FullName, "data.txt");
             var fileName = Path.Combine(directory.FullName, "SoccerGameResults.csv");
             var filecontents = RedFile(fileName);
-            Console.WriteLine(filecontents);
+            string[] fileLines = filecontents.Split(new char[] { '\r', '\n' });
+            foreach(var line in fileLines)
+            {
+                Console.WriteLine(line);
+            }
+            //string[] ss = filecontents.Split(',');
+
+            //Console.WriteLine(filecontents);
             //var file = new FileInfo(fileName);
             //if (file.Exists)
             //{
