@@ -13,7 +13,7 @@ namespace SoccerStats
         {
             string currentDirectory = Directory.GetCurrentDirectory();
             DirectoryInfo directory = new DirectoryInfo(currentDirectory);
-            var files = directory.GetFiles();
+            var files = directory.GetFiles("*.txt");
             foreach(var file in files)
             {
                 Console.WriteLine(file.Name);
