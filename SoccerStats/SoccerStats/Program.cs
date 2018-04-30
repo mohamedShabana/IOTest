@@ -18,26 +18,38 @@ namespace SoccerStats
             //{
             //    Console.WriteLine(file.Name);
             //}
-            var fileName = Path.Combine(directory.FullName, "data.txt");
-            var file = new FileInfo(fileName);
-            if (file.Exists)
-            {
-                using (var reader = new StreamReader(file.FullName))
-                {
-                    Console.SetIn(reader);
-                    Console.WriteLine(Console.ReadLine());
-                }
+            //var fileName = Path.Combine(directory.FullName, "data.txt");
+            var fileName = Path.Combine(directory.FullName, "SoccerGameResults.csv");
+            var filecontents = RedFile(fileName);
+            Console.WriteLine(filecontents);
+            //var file = new FileInfo(fileName);
+            //if (file.Exists)
+            //{
+            //    using (var reader = new StreamReader(file.FullName))
+            //    {
+            //        Console.SetIn(reader);
+            //        Console.WriteLine(Console.ReadLine());
+            //    }
 
-                //    var reader = new StreamReader(file.FullName);
-                //try
-                //{
-                //    Console.SetIn(reader);
-                //    Console.WriteLine(Console.ReadLine());
-                //}
-                //finally
-                //{
-                //    reader.Close();
-                //}
+            //    //    var reader = new StreamReader(file.FullName);
+            //    //try
+            //    //{
+            //    //    Console.SetIn(reader);
+            //    //    Console.WriteLine(Console.ReadLine());
+            //    //}
+            //    //finally
+            //    //{
+            //    //    reader.Close();
+            //    //}
+            //}
+            Console.ReadLine();
+        }
+
+        public static string RedFile(string fileName)
+        {
+            using (var reader = new StreamReader(fileName))
+            {
+                return reader.ReadToEnd();
             }
         }
     }

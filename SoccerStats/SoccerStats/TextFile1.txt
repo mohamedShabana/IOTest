@@ -1,0 +1,19 @@
+﻿> char Captial = 'H';
+> Captial
+'H'
+> char lowerH = '\u0068';
+> lowerH
+'h'
+> byte[] unicodeBytes = UnicodeEncoding.Unicode.GetBytes(new Char[] { lowerH });
+> unicodeBytes
+byte[2] { 104, 0 }
+> string unicodeString = UnicodeEncoding.Unicode.GetString(unicodeBytes);
+> unicodeString
+"h"
+> sbyte signedByte = -128;
+> char degree = '\u00B0';
+> degree
+'°'
+> Console.WriteLine("the current Temerature is 74.6" + degree);
+the current Temerature is 74.6°
+> 
