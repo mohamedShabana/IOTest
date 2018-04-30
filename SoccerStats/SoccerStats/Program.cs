@@ -18,6 +18,8 @@ namespace SoccerStats
             //{
             //    Console.WriteLine(file.Name);
             //}
+            var fileName = Path.Combine(directory.FullName, "data.txt");
+            var file = new FileInfo(fileName);
             
 
         }
