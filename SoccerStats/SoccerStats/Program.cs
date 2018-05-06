@@ -59,14 +59,14 @@ namespace SoccerStats
                 return reader.ReadToEnd();
             }
         }
-        public static List<string> ReadSoccerResult(string fileName)
+        public static List<string[]> ReadSoccerResult(string fileName)
         {
-            var soccerResults = new List<string>();
+            var soccerResults = new List<string[]>();
             using (var reader = new StreamReader(fileName))
             {
                 while(reader.Peek() > -1)
                 {
-                    string line = reader.ReadLine();
+                    string[] line = reader.ReadLine().Split(',');
                     soccerResults.Add(line);
                 }
             }
