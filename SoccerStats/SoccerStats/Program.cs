@@ -61,7 +61,8 @@ namespace SoccerStats
         }
         public static List<string> ReadSoccerResult(string fileName)
         {
-
+            var soccerResults = new List<string>();
+            return soccerResults;
         }
     }
 }
