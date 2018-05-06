@@ -67,6 +67,7 @@ namespace SoccerStats
                 while(reader.Peek() > -1)
                 {
                     string line = reader.ReadLine();
+                    soccerResults.Add(line);
                 }
             }
             return soccerResults;
