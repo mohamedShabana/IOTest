@@ -59,5 +59,9 @@ namespace SoccerStats
                 return reader.ReadToEnd();
             }
         }
+        public static List<string> ReadSoccerResult(string fileName)
+        {
+
+        }
     }
 }
