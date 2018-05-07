@@ -60,9 +60,9 @@ namespace SoccerStats
                 return reader.ReadToEnd();
             }
         }
-        public static List<string[]> ReadSoccerResult(string fileName)
+        public static List<GameResult> ReadSoccerResult(string fileName)
         {
-            var soccerResults = new List<string[]>();
+            var soccerResults = new List<GameResult>();
             using (var reader = new StreamReader(fileName))
             {
                 string line = "";
@@ -83,7 +83,7 @@ namespace SoccerStats
                     {
                         gameResult.HomeOrAway = homeoraway;
                     }
-                    soccerResults.Add(values);
+                    soccerResults.Add(gameResult);
                 }
                 //while(reader.Peek() > -1)
                 //{
