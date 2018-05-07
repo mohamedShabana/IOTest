@@ -11,4 +11,9 @@ namespace SoccerStats
         public DateTime GameDate { get; set; }
         public string TeamName { get; set; }
     }
+    public enum HomeOrAway
+    {
+        Home,
+        Away
+    }
 }

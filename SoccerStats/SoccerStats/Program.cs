@@ -77,6 +77,7 @@ namespace SoccerStats
                     {
                         gameResult.GameDate = gameDate;
                     }
+                    gameResult.TeamName = values[1];
                     soccerResults.Add(values);
                 }
                 //while(reader.Peek() > -1)
