@@ -15,6 +15,9 @@ namespace SoccerStats
         public int GoalAttempts { get; set; }
         public int ShotsOnGoal { get; set; }
         public int ShotsOffGoal { get; set; }
+        public double PosessionPercent { get; set; }
+        //calculate number of goals
+        public double ConversionRate { get; set; }
 
     }
     public enum HomeOrAway
