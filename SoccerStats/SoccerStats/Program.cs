@@ -69,8 +69,12 @@ namespace SoccerStats
                 reader.ReadLine();
                 while((line = reader.ReadLine()) !=null)
                 {
-                    string[] Lines = line.Split(',');
-                    soccerResults.Add(Lines);
+                    var gameResult = new GameResult();
+                    string[] values = line.Split(',');
+                    gameResult.GameDate = DateTime.Parse(values[0]);
+                    DateTime gameDate;
+                    DateTime.TryParse(values[0], out gameDate);
+                    soccerResults.Add(values);
                 }
                 //while(reader.Peek() > -1)
                 //{
