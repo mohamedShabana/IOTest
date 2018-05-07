@@ -71,9 +71,12 @@ namespace SoccerStats
                 {
                     var gameResult = new GameResult();
                     string[] values = line.Split(',');
-                    gameResult.GameDate = DateTime.Parse(values[0]);
+                    //gameResult.GameDate = DateTime.Parse(values[0]);// Delete
                     DateTime gameDate;
-                    DateTime.TryParse(values[0], out gameDate);
+                    if( DateTime.TryParse(values[0], out gameDate))
+                    {
+                        gameResult.GameDate = gameDate;
+                    }
                     soccerResults.Add(values);
                 }
                 //while(reader.Peek() > -1)
