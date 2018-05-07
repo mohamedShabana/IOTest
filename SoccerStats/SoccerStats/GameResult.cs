@@ -9,5 +9,6 @@ namespace SoccerStats
     public class GameResult
     {
         public DateTime GameDate { get; set; }
+        public string TeamName { get; set; }
     }
 }
