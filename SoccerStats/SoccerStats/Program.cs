@@ -78,6 +78,11 @@ namespace SoccerStats
                         gameResult.GameDate = gameDate;
                     }
                     gameResult.TeamName = values[1];
+                    HomeOrAway homeoraway;
+                    if(Enum.TryParse(values[2], out homeoraway))
+                    {
+                        gameResult.HomeOrAway = homeoraway;
+                    }
                     soccerResults.Add(values);
                 }
                 //while(reader.Peek() > -1)
@@ -86,6 +91,7 @@ namespace SoccerStats
                 //    soccerResults.Add(line);
                 //}
             }
+            
             return soccerResults;
         }
     }
