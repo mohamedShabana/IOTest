@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace SoccerStats
 {
-    class GameResult
+    public class GameResult
     {
+        public DateTime GameDate { get; set; }
     }
 }

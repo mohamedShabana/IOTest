@@ -66,6 +66,7 @@ namespace SoccerStats
             using (var reader = new StreamReader(fileName))
             {
                 string line = "";
+                reader.ReadLine();
                 while((line = reader.ReadLine()) !=null)
                 {
                     string[] Lines = line.Split(',');
