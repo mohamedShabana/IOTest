@@ -13,43 +13,10 @@ namespace SoccerStats
         {
             string currentDirectory = Directory.GetCurrentDirectory();
             DirectoryInfo directory = new DirectoryInfo(currentDirectory);
-            //var files = directory.GetFiles("*.txt");
-            //foreach(var file in files)
-            //{
-            //    Console.WriteLine(file.Name);
-            //}
-            //var fileName = Path.Combine(directory.FullName, "data.txt");
+          
             var fileName = Path.Combine(directory.FullName, "SoccerGameResults.csv");
             var filecontents = ReadSoccerResult(fileName);
-            //var filecontents = RedFile(fileName);
-            //string[] fileLines = filecontents.Split(new char[] { '\r', '\n' },StringSplitOptions.RemoveEmptyEntries);
-            //foreach(var line in fileLines)
-            //{
-            //    Console.WriteLine(line);
-            //}
-            //string[] ss = filecontents.Split(',');
-
-            //Console.WriteLine(filecontents);
-            //var file = new FileInfo(fileName);
-            //if (file.Exists)
-            //{
-            //    using (var reader = new StreamReader(file.FullName))
-            //    {
-            //        Console.SetIn(reader);
-            //        Console.WriteLine(Console.ReadLine());
-            //    }
-
-            //    //    var reader = new StreamReader(file.FullName);
-            //    //try
-            //    //{
-            //    //    Console.SetIn(reader);
-            //    //    Console.WriteLine(Console.ReadLine());
-            //    //}
-            //    //finally
-            //    //{
-            //    //    reader.Close();
-            //    //}
-            //}
+         
             Console.ReadLine();
         }
 
@@ -71,7 +38,7 @@ namespace SoccerStats
                 {
                     var gameResult = new GameResult();
                     string[] values = line.Split(',');
-                    //gameResult.GameDate = DateTime.Parse(values[0]);// Delete
+                   
                     DateTime gameDate;
                     if( DateTime.TryParse(values[0], out gameDate))
                     {
@@ -85,11 +52,7 @@ namespace SoccerStats
                     }
                     soccerResults.Add(gameResult);
                 }
-                //while(reader.Peek() > -1)
-                //{
-                //    string[] line = reader.ReadLine().Split(',');
-                //    soccerResults.Add(line);
-                //}
+                
             }
             
             return soccerResults;
