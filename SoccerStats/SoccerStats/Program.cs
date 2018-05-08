@@ -76,7 +76,7 @@ namespace SoccerStats
                     {
                         gameResult.PosessionPercent = posessionPercent;
                     }
-                    gameResult.ConversionRate = (double)gameResult.Goals / (double)gameResult.GoalAttempts;
+                    //gameResult.ConversionRate = (double)gameResult.Goals / (double)gameResult.GoalAttempts;
                     soccerResults.Add(gameResult);
                 }
                 
