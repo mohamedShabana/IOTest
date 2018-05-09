@@ -17,12 +17,12 @@ namespace SoccerStats
           
             var fileName = Path.Combine(directory.FullName, "SoccerGameResults.csv");
             var filecontents = ReadSoccerResult(fileName);
-            Console.WriteLine("Golas,TeamName");
-            foreach(var t in filecontents)
+            fileName = Path.Combine(directory.FullName, "Players.json");
+             var players = DeserializePlayers(fileName);
+            foreach(var player in players)
             {
-                Console.WriteLine(t.Goals + "," + t.TeamName);
+                Console.WriteLine(player.second_name);
             }
-            Console.ReadLine();
         }
 
         public static string RedFile(string fileName)
@@ -86,9 +86,15 @@ namespace SoccerStats
             return soccerResults;
         }
 
-        public static List<Player> DeserializePlayers()
+        public static List<Player> DeserializePlayers(string fileName)
         {
             var players = new List<Player>();
+            var serializer = new JsonSerializer();
+            using (var reader = new StreamReader(fileName))
+            using(var jsonReader = new JsonTextReader(reader))
+            {
+                players = serializer.Deserialize<List<Player>>(jsonReader);
+            }
             return players;
         }
     }
