@@ -1,4 +1,6 @@
-﻿using System;
+﻿/*
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,11 +15,11 @@ namespace SoccerStats
         {
             string currentDirectory = Directory.GetCurrentDirectory();
             DirectoryInfo directory = new DirectoryInfo(currentDirectory);
-          
+
             var fileName = Path.Combine(directory.FullName, "SoccerGameResults.csv");
             var filecontents = ReadSoccerResult(fileName);
             Console.WriteLine("Golas,TeamName");
-            foreach(var t in filecontents)
+            foreach (var t in filecontents)
             {
                 Console.WriteLine(t.Goals + "," + t.TeamName);
             }
@@ -72,23 +74,18 @@ namespace SoccerStats
                         gameResult.ShotsOffGoal = parseInt;
                     }
                     double posessionPercent;
-                    if(double.TryParse(values[7], out posessionPercent))
+                    if (double.TryParse(values[7], out posessionPercent))
                     {
                         gameResult.PosessionPercent = posessionPercent;
                     }
                     //gameResult.ConversionRate = (double)gameResult.Goals / (double)gameResult.GoalAttempts;
                     soccerResults.Add(gameResult);
                 }
-                
-            }
-            
-            return soccerResults;
-        }
 
-        public static List<Player> DeserializePlayers()
-        {
-            var players = new List<Player>();
-            return players;
+            }
+
+            return soccerResults;
         }
     }
 }
+*/
