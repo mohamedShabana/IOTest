@@ -39,7 +39,8 @@ namespace SoccerStats
         //public string form { get; set; }
         //public int goals_conceded { get; set; }
         //public int goals_scored { get; set; }
-        public int id { get; set; }
+        [JsonProperty(PropertyName ="id")]
+        public int Id { get; set; }
         //public bool in_dreamteam { get; set; }
         //public int interceptions { get; set; }
         //public int key_passes { get; set; }
@@ -58,19 +59,22 @@ namespace SoccerStats
         //public int penalties_missed { get; set; }
         //public int penalties_saved { get; set; }
         //public string photo { get; set; }
-        public string points_per_game { get; set; }
+        [JsonProperty(PropertyName = "points_per_game")]
+        public double PointsPerGame { get; set; }
         //public string position { get; set; }
         //public int recoveries { get; set; }
         //public int red_cards { get; set; }
         //public int saves { get; set; }
-        public string second_name { get; set; }
+        [JsonProperty(PropertyName = "second_name")]
+        public string LastName { get; set; }
         //public string selected_by_percent { get; set; }
         //public int shots { get; set; }
         //public bool special { get; set; }
         //public string status { get; set; }
         //public int tackles { get; set; }
         //public int team { get; set; }
-        public string team_name { get; set; }
+        [JsonProperty(PropertyName = "team_name")]
+        public string TeamName { get; set; }
         //public int total_points { get; set; }
         //public int transfers_in { get; set; }
         //public int transfers_in_event { get; set; }
