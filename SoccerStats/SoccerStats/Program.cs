@@ -24,6 +24,8 @@ namespace SoccerStats
             {
                 Console.WriteLine("Name: "+player.FirstName+" PPG: "+player.PointsPerGame);
             }
+            fileName = Path.Combine(directory.FullName, "topTen.json");
+            serializePlayerToFile(toptenPlayer, fileName);
         }
 
         public static string RedFile(string fileName)
@@ -113,5 +115,17 @@ namespace SoccerStats
             }
             return toptenPlayers;
         }
+
+        public static void serializePlayerToFile(List<Player> Players , string fileName )
+        {
+            
+            var serializer = new JsonSerializer();
+            using (var writer = new StreamWriter(fileName))
+            using (var JsonWriter = new JsonTextWriter(writer))
+            {
+                serializer.Serialize(JsonWriter,Players);
+            }
+        }
+
     }
 }
