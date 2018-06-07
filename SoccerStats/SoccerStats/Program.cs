@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 using Newtonsoft.Json;
+using System.Net;
 
 namespace SoccerStats
 {
@@ -26,6 +27,15 @@ namespace SoccerStats
             }
             fileName = Path.Combine(directory.FullName, "topTen.json");
             serializePlayerToFile(toptenPlayer, fileName);
+            Console.WriteLine("--------------------------------------------------");
+            string[] h = readLinebyLine(GetGoogleHomePage());
+            foreach(var t in h )
+            {
+                Console.WriteLine(t);
+            }
+            Console.ReadLine();
+
+
         }
 
         public static string RedFile(string fileName)
@@ -127,5 +137,36 @@ namespace SoccerStats
             }
         }
 
+
+        public static string GetGoogleHomePage()
+        {
+            var webClient = new WebClient();
+            byte[] googleHome = webClient.DownloadData("https://www.google.com");
+
+            using (var stream = new MemoryStream(googleHome))
+            using(var reader = new StreamReader(stream))
+            {
+                return reader.ReadToEnd();
+            }
+        }
+
+        public static string GetNewsForPlayer(string playerName)
+        {
+            var webClient = new WebClient();
+            webClient.Headers.Add("Ocp-Apim-Subscription-Key", "17b524");
+            byte[] SearchResult = webClient.DownloadData(string.Format("https://api.cognitive.microsoft.com/bing/v7.0/search?q={0}&mkt=en-us", playerName));
+
+            using (var stream = new MemoryStream(SearchResult))
+            using (var reader = new StreamReader(stream))
+            {
+                return reader.ReadToEnd();
+            }
+        }
+
+        public static string[] readLinebyLine( string fileconent)
+        {
+            string[] file = fileconent.Split(new char[] { '\t', '\n' }, StringSplitOptions.RemoveEmptyEntries);
+            return file;
+        }
     }
 }
